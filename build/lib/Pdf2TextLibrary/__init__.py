@@ -8,7 +8,7 @@ class Pdf2TextLibrary(object):
     ROBOT_LIBRARY_SCOPE = 'Global'
 
     def __init__(self):
-        print 'pdt to text library'
+        print('pdf to text library')
 
     def convert_pdf_to_txt(self,path):
         rsrcmgr = PDFResourceManager()
