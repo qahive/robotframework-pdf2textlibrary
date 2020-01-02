@@ -5,7 +5,7 @@ from pdfminer.pdfpage import PDFPage
 from io import StringIO
 
 
-__version__ = '0.3'
+__version__ = '1.0.1'
 
 class Pdf2TextLibrary(object):
     ROBOT_LIBRARY_SCOPE = 'Global'
