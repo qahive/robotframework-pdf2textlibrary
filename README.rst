@@ -13,7 +13,7 @@ Pdf2TextLibrary_ is a Robot Framework library for read the pdf file as text data
 Keyword documentation
 ---------------------
 
-See `keyword documentation <https://qahive.github.io/robotframework-................>`_ for available keywords and more information about the library in general.
+See `keyword documentation <https://qahive.github.io/robotframework-pdf2textlibrary/Pdf2TextLibrary.html>`_ for available keywords and more information about the library in general.
 
 
 Installation
