@@ -1,37 +1,37 @@
 #!/usr/bin/env python
 
-from os.path import join, dirname
-import os
-
-script_dir = os.path.dirname(__file__)
-rel_path = "./src/Pdf2TextLibrary/version.py"
-version = {}
-with open(os.path.join(script_dir, rel_path)) as fp:
-    exec(fp.read(), version)
-
-
+import re
+from os.path import abspath, join, dirname
 from setuptools import setup
 
-CLASSIFIERS = """
-Programming Language :: Python
-Topic :: Software Development :: Testing
-"""[1:-1]
 
-long_description=open(join(dirname(__file__), 'README.md',)).read()
+CURDIR = dirname(abspath(__file__))
+
+with open("README.rst", "r", encoding='utf-8') as fh:
+    long_description = fh.read()
+
+with open(join(CURDIR, 'src', 'Pdf2TextLibrary', '__init__.py'), encoding='utf-8') as f:
+    VERSION = re.search("\n__version__ = '(.*)'", f.read()).group(1)
 
 setup(
     name='robotframework-pdf2textlibrary',
-    version=version.get("VERSION"),
+    version=VERSION,
+    author="QA Hive Co.,Ltd",
+    author_email="support@qahive.com",
     description='Robot Framework PDF Inspect Library',
     long_description=long_description,
-    author='bloopark systems GmbH & Co. KG',
-    author_email='info@bloopark.com',
     url='https://github.com/qahive/robotframework-pdf2textlibrary',
     license='Apache License 2.0',
     keywords='robotframework read pdf reports',
     platforms='any',
     zip_safe=False,
-    classifiers=CLASSIFIERS.splitlines(),
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
+        "Topic :: Software Development :: Testing",
+        "Framework :: Robot Framework"
+    ],
     package_dir={'': 'src'},
     install_requires=['robotframework', 'pdfminer2', 'chardet'],
     packages=['Pdf2TextLibrary'],
